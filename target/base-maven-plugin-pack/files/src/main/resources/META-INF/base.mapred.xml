@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapred>
+    <!-- profile -->
+    <baseId>9bcdbd7793d95df6fcfe6a29b1a3341d</baseId>
+    <projectId>2424</projectId>
+    <resourceName>MR</resourceName>
+    <idePath>工作流/myfolder</idePath>
+
+    <!-- classes -->
+    <jobLauncher>my.group.MR.JobLauncher</jobLauncher>
+    <mapper>my.group.MR.MyMapper</mapper>
+    <reducer>my.group.MR.MyReducer</reducer>
+    <combiner>my.group.MR.MyCombiner</combiner>
+
+    <!--task-->
+    <mapOutputKey>word:string</mapOutputKey>
+    <mapOutputValue>cnt:bigint</mapOutputValue>
+    <!--
+    <partitionColumns>col1,col2</partitionColumns>
+    <outputKeySortColumns>col1,col2</outputKeySortColumns>
+    <outputKeySortOrders>ASC,DESC</outputKeySortOrders>
+    <outputGroupingColumns>col1,col2</outputGroupingColumns>
+    <numReduceTask>8</numReduceTask>
+    <memoryForMapTask>2048</memoryForMapTask>
+    <memoryForReduceTask>2048</memoryForReduceTask>
+    -->
+
+    <!-- tables -->
+    <inputTables>
+        <table>
+            <name>temp1</name> 
+        </table>
+        <table>
+            <name>temp2</name> 
+        </table>
+    </inputTables>
+    <outputTable>
+        <name>wc_out</name>
+    </outputTable>
+</mapred>
